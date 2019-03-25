@@ -383,6 +383,207 @@ window.onmouseout = function () {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/关于hexo无法托管到coding平台问题的解决办法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rizzo">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RIZZO">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/25/关于hexo无法托管到coding平台问题的解决办法/" itemprop="url">关于hexo无法托管到coding平台问题的解决办法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-25T19:10:26+08:00">
+                2019-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/03/25/关于hexo无法托管到coding平台问题的解决办法/" class="leancloud_visitors" data-flag-title="关于hexo无法托管到coding平台问题的解决办法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  298
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+
+      
+      
+
+      
+        
+          
+            <h3 id="1、原因"><a href="#1、原因" class="headerlink" title="1、原因"></a>1、原因</h3><p>​        自2019年以来，由于coding公司与腾讯开发者平台合作，coding的免费托管项目已经由腾讯开发者平台代理，所以网上教程hexo推送到coding的代码已经不适用了</p>
+<p><img src="/2019/03/25/关于hexo无法托管到coding平台问题的解决办法/1.png" alt="1"></p>
+<h3 id="2、解决办法"><a href="#2、解决办法" class="headerlink" title="2、解决办法"></a>2、解决办法</h3><p>1、在腾讯开发者平台上创建新的秘钥，此秘钥就是你安装hexo的机器的ssh秘钥，的由于网络上的创建秘钥教程很多，所以这里不再重复。</p>
+<p>2、登录腾讯开发者平台，创建自己的项目，项目名称最好是：你的用户名.coding.me，这样的话给你分配的域名会是你的项目名称，你的用户名如图所示。</p>
+<p><img src="/2019/03/25/关于hexo无法托管到coding平台问题的解决办法/2.png" alt="2"></p>
+<p>3、单击自己建立的项目，右下角找到ssh推送网址，点击复制</p>
+<p><img src="/2019/03/25/关于hexo无法托管到coding平台问题的解决办法/3.png" alt="3"></p>
+<p>4、最后打开hexo的配置文件:hexo/_config.yml，在最后面的修改如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: 你上一步复制的链接</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>点击保存即可！</p>
+<p>5、最后生成静态网页并推送到腾讯开发者平台：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>完成后打开网址：你的用户名.coding.me，就可以看到自己的博客啦！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+
+
+    
+
+    
+
+    
+
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/试一下插入图片/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -796,7 +997,7 @@ window.onmouseout = function () {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
